@@ -1,0 +1,29 @@
+[
+  {
+    "TOOL_SLUG": "b2b-lead-roi-calculator",
+    "TOOL_TITLE": "B2B Lead ROI & Outreach Calculator - Free Growth Tool",
+    "TOOL_DESCRIPTION": "Calculate the return on investment (ROI) for your cold outreach campaigns instantly.",
+    "TOOL_HEADING": "B2B Lead ROI Calculator",
+    "TOOL_SUBTITLE": "Optimize your sales development math without server cost.",
+    "TOOL_HTML_CONTENT": "<div class='space-y-4'><label class='block text-sm font-semibold'>Number of Target Leads</label><input type='number' id='leads' value='1000' class='w-full p-2 border border-slate-300 rounded-lg'><label class='block text-sm font-semibold'>Average Deal Value ($)</label><input type='number' id='dealValue' value='500' class='w-full p-2 border border-slate-300 rounded-lg'><button onclick='calculateROI()' class='w-full bg-blue-600 text-white p-3 rounded-lg font-bold hover:bg-blue-700 transition'>Calculate Potential Revenue</button><div id='result' class='mt-4 p-4 bg-slate-50 border border-slate-200 rounded-lg hidden'><p class='text-sm text-slate-600'>Estimated Revenue (at 1% conversion):</p><p id='revOutput' class='text-2xl font-black text-green-600'>$0</p></div></div>",
+    "TOOL_JS_LOGIC": "function calculateROI(){ const leads = document.getElementById('leads').value; const val = document.getElementById('dealValue').value; const conversions = Math.floor(leads * 0.01); const revenue = conversions * val; document.getElementById('revOutput').innerText = '$' + revenue.toLocaleString(); document.getElementById('result').classList.remove('hidden'); }"
+  },
+  {
+    "TOOL_SLUG": "cold-email-cost-calculator",
+    "TOOL_TITLE": "Cold Email Cost & CPA Predictor",
+    "TOOL_DESCRIPTION": "Estimate your cost per acquisition (CPA) based on inbox setup and software tools.",
+    "TOOL_HEADING": "Cold Email Cost Predictor",
+    "TOOL_SUBTITLE": "Analyze overhead and tool costs vs expected outcomes.",
+    "TOOL_HTML_CONTENT": "<div class='space-y-4'><label class='block text-sm font-semibold'>Monthly Infrastructure Cost ($)</label><input type='number' id='infraCost' value='150' class='w-full p-2 border border-slate-300 rounded-lg'><label class='block text-sm font-semibold'>Target Monthly Closed Deals</label><input type='number' id='dealsCount' value='5' class='w-full p-2 border border-slate-300 rounded-lg'><button onclick='calculateCPA()' class='w-full bg-indigo-600 text-white p-3 rounded-lg font-bold hover:bg-indigo-700 transition'>Calculate Expected CPA</button><div id='cpaResult' class='mt-4 p-4 bg-slate-50 border border-slate-200 rounded-lg hidden'><p class='text-sm text-slate-600'>Estimated Customer Acquisition Cost (CAC/CPA):</p><p id='cpaOutput' class='text-2xl font-black text-indigo-600'>$0</p></div></div>",
+    "TOOL_JS_LOGIC": "function calculateCPA(){ const cost = document.getElementById('infraCost').value; const deals = document.getElementById('dealsCount').value; const cpa = deals > 0 ? (cost / deals).toFixed(2) : 0; document.getElementById('cpaOutput').innerText = '$' + cpa; document.getElementById('cpaResult').classList.remove('hidden'); }"
+  },
+  {
+    "TOOL_SLUG": "lead-velocity-index-meter",
+    "TOOL_TITLE": "B2B Lead Velocity Index Meter",
+    "TOOL_DESCRIPTION": "Track how fast your sales pipeline is expanding week over week.",
+    "TOOL_HEADING": "Pipeline Velocity Meter",
+    "TOOL_SUBTITLE": "Measure pipeline velocity acceleration rate.",
+    "TOOL_HTML_CONTENT": "<div class='space-y-4'><label class='block text-sm font-semibold'>Qualified Opportunities</label><input type='number' id='opps' value='50' class='w-full p-2 border border-slate-300 rounded-lg'><label class='block text-sm font-semibold'>Win Rate Percentage (%)</label><input type='number' id='winRate' value='20' class='w-full p-2 border border-slate-300 rounded-lg'><button onclick='calculateVelocity()' class='w-full bg-emerald-600 text-white p-3 rounded-lg font-bold hover:bg-emerald-700 transition'>Compute Velocity Index</button><div id='velResult' class='mt-4 p-4 bg-slate-50 border border-slate-200 rounded-lg hidden'><p class='text-sm text-slate-600'>Pipeline Velocity Coefficient:</p><p id='velOutput' class='text-2xl font-black text-emerald-600'>0</p></div></div>",
+    "TOOL_JS_LOGIC": "function calculateVelocity(){ const opps = document.getElementById('opps').value; const rate = document.getElementById('winRate').value; const score = Math.floor(opps * (rate / 100) * 1.5); document.getElementById('velOutput').innerText = score + ' pts'; document.getElementById('velResult').classList.remove('hidden'); }"
+  }
+]

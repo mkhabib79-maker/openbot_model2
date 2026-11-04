@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ TOOL_TITLE }}</title>
+    <meta name="description" content="{{ TOOL_DESCRIPTION }}">
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-200 min-h-screen text-slate-800 flex flex-col justify-between">
+
+    <!-- Header / Branding -->
+    <header class="p-6 text-center border-b border-slate-200 glass">
+        <h1 class="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            {{ TOOL_HEADING }}
+        </h1>
+        <p class="text-sm text-slate-500 mt-2">{{ TOOL_SUBTITLE }}</p>
+    </header>
+
+    <!-- Main Tool Container -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="w-full max-w-xl p-8 rounded-2xl shadow-xl glass">
+            {{ TOOL_HTML_CONTENT }}
+        </div>
+    </main>
+
+    <!-- Traffic Loop & Monetization Ad Layout -->
+    <footer class="p-6 text-center border-t border-slate-200 glass text-xs text-slate-500">
+        <p class="mb-4">Powered by B2B Suite | Need raw data? 
+            <a href="https://rapidapi.com" target="_blank" class="text-blue-600 font-bold hover:underline">
+                Access our Model 2 Lead Generation API
+            </a>
+        </p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        {{ TOOL_JS_LOGIC }}
+    </script>
+</body>
+</html>

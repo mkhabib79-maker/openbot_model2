@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cold Email Cost & CPA Predictor</title>
+    <meta name="description" content="Estimate your cost per acquisition (CPA) based on inbox setup and software tools.">
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+
+        <!-- Programmatic Monetag Ad Integration -->
+        <script src="https://alwingulla.com" data-zone="8888888" defer></script>
+        
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-200 min-h-screen text-slate-800 flex flex-col justify-between">
+
+    <!-- Header / Branding -->
+    <header class="p-6 text-center border-b border-slate-200 glass">
+        <h1 class="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            Cold Email Cost Predictor
+        </h1>
+        <p class="text-sm text-slate-500 mt-2">Analyze overhead and tool costs vs expected outcomes.</p>
+    </header>
+
+    <!-- Main Tool Container -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="w-full max-w-xl p-8 rounded-2xl shadow-xl glass">
+            <div class='space-y-4'><label class='block text-sm font-semibold'>Monthly Infrastructure Cost ($)</label><input type='number' id='infraCost' value='150' class='w-full p-2 border border-slate-300 rounded-lg'><label class='block text-sm font-semibold'>Target Monthly Closed Deals</label><input type='number' id='dealsCount' value='5' class='w-full p-2 border border-slate-300 rounded-lg'><button onclick='calculateCPA()' class='w-full bg-indigo-600 text-white p-3 rounded-lg font-bold hover:bg-indigo-700 transition'>Calculate Expected CPA</button><div id='cpaResult' class='mt-4 p-4 bg-slate-50 border border-slate-200 rounded-lg hidden'><p class='text-sm text-slate-600'>Estimated Customer Acquisition Cost (CAC/CPA):</p><p id='cpaOutput' class='text-2xl font-black text-indigo-600'>$0</p></div></div>
+        </div>
+    </main>
+
+    <!-- Traffic Loop & Monetization Ad Layout -->
+    <footer class="p-6 text-center border-t border-slate-200 glass text-xs text-slate-500">
+        <p class="mb-4">Powered by B2B Suite | Need raw data? 
+            <a href="https://rapidapi.com" target="_blank" class="text-blue-600 font-bold hover:underline">
+                Access our Model 2 Lead Generation API
+            </a>
+        </p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        function calculateCPA(){ const cost = document.getElementById('infraCost').value; const deals = document.getElementById('dealsCount').value; const cpa = deals > 0 ? (cost / deals).toFixed(2) : 0; document.getElementById('cpaOutput').innerText = '$' + cpa; document.getElementById('cpaResult').classList.remove('hidden'); }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+name: Model 3 Auto-Compilation Pipeline
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'model3-asset-factory/manifest.json'
+      - 'model3-asset-factory/templates/**'
+      - 'model3-asset-factory/engine.py'
+  workflow_dispatch: # Allows manual trigger directly from GitHub interface
+
+jobs:
+  build-and-compile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout Code Repository
+      uses: actions/checkout@v4
+
+    - name: Set Up Python Runtime Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Compile Automated Tools and Central Hub Directory
+      run: |
+        python model3-asset-factory/engine.py
+
+    - name: Commit and Sync Compiled Assets to Production
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add public/index.html public/assets/tools/*.html
+        
+        # Prevent failure if no file modifications exist during manual runs
+        git diff --quiet && git diff --staged --quiet || (git commit -m "chore(auto): programmatically re-compile production micro-tools and hub dashboard" && git push)

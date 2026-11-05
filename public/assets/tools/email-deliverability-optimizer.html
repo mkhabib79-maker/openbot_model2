@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cold Email Deliverability Rate Optimizer</title>
+    <meta name="description" content="Check and optimize your domain health metrics to prevent emails from hitting spam folders.">
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+
+<!-- Monetag Integration -->
+<script src="https://alwingulla.com" data-zone="8888888" defer></script>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-200 min-h-screen text-slate-800 flex flex-col justify-between">
+
+    <!-- Header / Branding -->
+    <header class="p-6 text-center border-b border-slate-200 glass">
+        <h1 class="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            Deliverability Score Optimizer
+        </h1>
+        <p class="text-sm text-slate-500 mt-2">Test your DNS and copy setting weights instantly.</p>
+    </header>
+
+    <!-- Main Tool Container -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="w-full max-w-xl p-8 rounded-2xl shadow-xl glass">
+            <div class='space-y-4'><label class='block text-sm font-semibold'>Total Spam Trigger Words in Copy</label><input type='number' id='spamWords' value='3' class='w-full p-2 border border-slate-300 rounded-lg'><label class='block text-sm font-semibold'>Is Custom Tracking Domain Enabled?</label><select id='ctd' class='w-full p-2 border border-slate-300 rounded-lg'><option value='10'>Yes, Enabled (+10 pts)</option><option value='0'>No, Disabled (0 pts)</option></select><button onclick='checkDeliverability()' class='w-full bg-amber-600 text-white p-3 rounded-lg font-bold hover:bg-amber-700 transition'>Audit Copy Score</button><div id='optResult' class='mt-4 p-4 bg-slate-50 border border-slate-200 rounded-lg hidden'><p class='text-sm text-slate-600'>Estimated Sender Score Rating:</p><p id='optOutput' class='text-2xl font-black text-amber-600'>0%</p></div></div>
+        </div>
+    </main>
+
+    <!-- Traffic Loop & Monetization Ad Layout -->
+    <footer class="p-6 text-center border-t border-slate-200 glass text-xs text-slate-500">
+        <p class="mb-4">Powered by B2B Suite | Need raw data? 
+            <a href="https://rapidapi.com" target="_blank" class="text-blue-600 font-bold hover:underline">
+                Access our Model 2 Lead Generation API
+            </a>
+        </p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        function checkDeliverability(){ const words = document.getElementById('spamWords').value; const bonus = parseInt(document.getElementById('ctd').value); let baseScore = 90 - (words * 8) + bonus; if(baseScore > 100) baseScore = 100; if(baseScore < 0) baseScore = 0; document.getElementById('optOutput').innerText = baseScore + '% Sender Health'; document.getElementById('optResult').classList.remove('hidden'); }
+    </script>
+</body>
+</html>

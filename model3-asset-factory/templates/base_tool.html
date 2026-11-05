@@ -6,41 +6,50 @@
     <title>{{ TOOL_TITLE }}</title>
     <meta name="description" content="{{ TOOL_DESCRIPTION }}">
     <script src="https://tailwindcss.com"></script>
+    <!-- Programmatic Monetag Ad Integration -->
+    <script src="https://alwingulla.com" data-zone="8888888" defer></script>
     <style>
         .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-50 to-slate-200 min-h-screen text-slate-800 flex flex-col justify-between">
+<body class="bg-gradient-to-br from-slate-50 to-slate-200 min-h-screen text-slate-800 antialiased flex flex-col justify-between">
 
-    <!-- Header / Branding -->
-    <header class="p-6 text-center border-b border-slate-200 glass">
-        <h1 class="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+    <!-- Top Navigation Bar for Traffic Loop back to Hub -->
+    <nav class="p-4 border-b border-slate-200 glass sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="/" class="text-md font-bold text-slate-700 hover:text-blue-600 transition">← Back to Free Tools Directory</a>
+            <span class="px-3 py-1 text-xs font-semibold text-emerald-600 bg-emerald-100 rounded-full uppercase tracking-wider">Free Access</span>
+        </div>
+    </nav>
+
+    <!-- Header Block -->
+    <header class="p-8 text-center mt-4">
+        <h1 class="text-3xl md:text-4xl font-black tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
             {{ TOOL_HEADING }}
         </h1>
-        <p class="text-sm text-slate-500 mt-2">{{ TOOL_SUBTITLE }}</p>
+        <p class="text-sm text-slate-500 mt-2 max-w-md mx-auto">{{ TOOL_SUBTITLE }}</p>
     </header>
 
-    <!-- Main Tool Container -->
+    <!-- Main Tool Workspace Container -->
     <main class="flex-grow flex items-center justify-center p-4">
-        <div class="w-full max-w-xl p-8 rounded-2xl shadow-xl glass">
+        <div class="w-full max-w-xl p-8 rounded-2xl shadow-xl glass border border-white">
             {{ TOOL_HTML_CONTENT }}
         </div>
     </main>
 
-    <!-- Traffic Loop & Monetization Ad Layout -->
-    <footer class="p-6 text-center border-t border-slate-200 glass text-xs text-slate-500">
-        <p class="mb-4">Powered by B2B Suite | Need raw data? 
-            <a href="https://rapidapi.com" target="_blank" class="text-blue-600 font-bold hover:underline">
-                Access our Model 2 Lead Generation API
-            </a>
-        </p>
+    <!-- Monetag Banner Container & Backlinks to Model 2 Core API -->
+    <footer class="p-6 text-center border-t border-slate-200 glass text-xs text-slate-500 w-full mt-12">
+        <p class="mb-2">Powered by B2B Suite | Need raw data for enrichment?</p>
+        <a href="https://rapidapi.com" target="_blank" class="inline-block px-4 py-2 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition mb-4">
+            Access our Model 2 Lead Generation API Storefront
+        </a>
+        <p class="text-[10px] text-slate-400">© 2026 B2B Tools Hub. All services are free to use under MIT license terms.</p>
     </footer>
 
-    <!-- JavaScript Logic -->
     <script>
         {{ TOOL_JS_LOGIC }}
     </script>

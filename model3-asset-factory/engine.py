@@ -24,7 +24,7 @@ def generate_all_tools_and_hub(config_path, template_path, output_dir):
             output_html = output_html.replace(placeholder, str(value))
 
         # Automated Monetization Injection Layer
-        ad_script_block = f'\n<!-- Monetag Integration -->\n<script src="{MONETAG_SCRIPT_SRC}" data-zone="8888888" defer></script>'
+        ad_script_block = f'\n<!-- Monetag Integration -->\n<script src="{MONETAG_SCRIPT_SRC}" data-zone="3563306" defer></script>'
         if "</head>" in output_html:
             output_html = output_html.replace("</head>", f"{ad_script_block}\n</head>")
 

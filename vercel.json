@@ -1,0 +1,16 @@
+ 
+{
+  "version": 2,
+  "cleanUrls": true,
+  "public": true,
+  "routes": [
+    {
+      "src": "/assets/tools/(.*)",
+      "dest": "/public/assets/tools/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ]
+}
